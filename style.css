@@ -1,5 +1,4 @@
 body {
-    /* background-image: url(images/Arrière-plan.jpg); */
     background-attachment: scroll;
     background: linear-gradient(180deg, black, white);
 }
@@ -10,6 +9,31 @@ h1 {
     font-size: 80px;
     text-align: center;
 }
+
+span {
+    color: white;
+    display: none;
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+}
+
+label{
+    font-family: Stencil Std, fantasy;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+input{
+    width: 50px;
+    height: 30px;
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+}
+
+/* Class of div's */
 
 .title {
     background-color: black;
@@ -24,25 +48,96 @@ h1 {
     background: linear-gradient(180deg, black, grey);
     width: 50%;
     min-height: 100vh;
-    box-shadow: 0px 30px 40px rgba(0, 0, 0, .1);
+    text-align: center;
 }
 
-.result {
-    color: white;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+.lapsGame{
     text-align: center;
+    margin-top: 50px;
 }
 
 .choice {
     text-align: center;
+    margin-top: 50px;
 }
 
-.RPS {
+.result {
+    color: white;
+    font-family: Stencil Std, fantasy;
+    text-align: center;
+    font-size: 15px;
+}
+
+.scoring {
+    font-size: 30px;
+    font-family: Stencil Std, fantasy;
+    text-align: center;
+    color: white;
+}
+
+/* ////////////////////////////////////////// */
+
+/* Class of buttons */
+
+.rules {
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    background: linear-gradient(90deg, white, grey);
+    border-radius: 0px 20px 0 20px;
+    border: none;
+    outline: none;
+}
+
+.startGame{
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    background: linear-gradient(90deg, white, grey);
+    border-radius: 0px 20px 0 20px;
+    border: none;
+    outline: none;
+}
+
+.rock {
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    background: linear-gradient(90deg, white, grey);
+    border-radius: 0px 20px 0 20px;
+    border: none;
     width: 100px;
     height: 100px;
+    display: none;
+    outline: none;
 }
 
-span{
-    color: white;
+.paper {
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    background: linear-gradient(90deg, white, grey);
+    border-radius: 20px 0 20px 0;
+    border: none;
+    width: 100px;
+    height: 100px;
     display: none;
+    outline: none;
 }
+
+.scissors {
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    background: linear-gradient(90deg, white, grey);
+    border-radius: 0px 20px 0 20px;
+    border: none;
+    width: 100px;
+    height: 100px;
+    display: none;
+    outline: none;
+}
+
+/* ///////////////////////////////////////// */
+
