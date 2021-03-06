@@ -37,6 +37,9 @@ function startGame() {
   rock.style.display = "inline";
   paper.style.display = "inline";
   scissors.style.display = "inline";
+  win.style.display = "inline";
+  scoring.style.display = "inline";
+  result.style.display = "inline";
 }
 
 ///////////////////////////////////////////////////////
@@ -95,12 +98,24 @@ const buttonStartOver = document.getElementById("startOver");
 function stopFunction() {
 
   buttonStartOver.style.display = "inline";
-  console.log(buttonStartOver.style.display);
   rock.style.display = "none";
   paper.style.display = "none";
   scissors.style.display = "none";
   document.querySelector(".win").innerHTML = `${nameWinner} a gagné la partie !`;
-
 }
 
 ///////////////////////////////////////////////////////
+
+const win = document.getElementById("win");
+const scoring = document.getElementById("scoring");
+const result = document.getElementById("result");
+
+function startOver() {
+  buttonStartOver.style.display = "none";
+  win.style.display = "none";
+  scoring.style.display = "none";
+  result.style.display = "none";
+  divLapsGame.style.display = "inline";
+  var divToErase = document.querySelectorAll(".scoring, .result, .win")
+  divToErase = "";
+}
