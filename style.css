@@ -75,6 +75,13 @@ input{
     color: white;
 }
 
+.win{
+    font-size: 50px;
+    font-family: Stencil Std, fantasy;
+    text-align: center;
+    color: white; 
+}
+
 /* ////////////////////////////////////////// */
 
 /* Class of buttons */
@@ -136,6 +143,20 @@ input{
     width: 100px;
     height: 100px;
     display: none;
+    outline: none;
+}
+
+.startOver{
+    margin-top: 50px;
+    display: none;
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+    font-family: Stencil Std, fantasy;
+    font-size: 20px;
+    background: linear-gradient(90deg, white, grey);
+    border-radius: 0px 20px 0 20px;
+    border: none;
     outline: none;
 }
 

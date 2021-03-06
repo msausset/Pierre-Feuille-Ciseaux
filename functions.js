@@ -1,16 +1,16 @@
 // Function disappearance / appearance of rules and switch text "Voir les règles" to "Enlever les règles" 
 
-const btn = document.querySelector('.rules');
+const buttonRules = document.querySelector('.rules');
 const span = document.getElementById("rulesTxt");
 
 
-btn.addEventListener("click", updateBtn);
+buttonRules.addEventListener("click", updateBtn);
 
 function updateBtn() {
-  if (btn.innerHTML === 'Voir les règles') {
-    btn.innerHTML = 'Enlever les règles';
+  if (buttonRules.innerHTML === 'Voir les règles') {
+    buttonRules.innerHTML = 'Enlever les règles';
   } else {
-    btn.innerHTML = 'Voir les règles';
+    buttonRules.innerHTML = 'Voir les règles';
   }
   if (span.style.display == "inline") {
     span.style.display = "none";
@@ -19,56 +19,88 @@ function updateBtn() {
   }
 }
 
-//////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 
 // Function start the game
 
-/* let saisie = document.getElementById("inputNb");*/
+let input = document.getElementById("inputNb"); // saisie.value
+const divLapsGame = document.querySelector(".lapsGame");
 const buttonStart = document.querySelector('.startGame');
-const ropasc = document.querySelectorAll(".rock, .paper, .scissors");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
 
 buttonStart.addEventListener("click", startGame);
 
-function startGame(){
-  if (ropasc.style.display == "none"){
-    ropasc.style.display = "inline";
-  }
+function startGame() {
+  divLapsGame.style.display = "none";
+  rock.style.display = "inline";
+  paper.style.display = "inline";
+  scissors.style.display = "inline";
 }
 
-///////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 
 // Function game
 
 const buttons = document.querySelectorAll(".rock, .paper, .scissors");
 let scorePlayer = 0;
 let scoreRobot = 0;
+let nameWinner = "";
 
 for (let i = 0; i < buttons.length; i++) {
+
   buttons[i].addEventListener("click", game);
-  
+
+
   function game() {
 
     const player = buttons[i].innerHTML
     const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML; // Pick randomly a number (int) between 1 and 3 (buttons.length (3))
     let resultat = "";
+    let limit = input.value;
+
     if (player === robot) {
       resultat = "Égalité";
-
     } else if ((player === "Pierre" && robot === "Ciseaux") || (player === "Feuille" && robot === "Pierre") || (player === "Ciseaux" && robot === "Feuille")) {
-      resultat = "Le joueur a gagné";
+      resultat = "Le joueur a gagné la manche";
       scorePlayer += 1;
+      if (scorePlayer == limit) {
+        nameWinner = "Le joueur ";
+        stopFunction();
+      }
     } else {
-      resultat = "Le joueur a perdu";
+      resultat = "Le joueur a perdu la manche";
       scoreRobot += 1;
+      if (scoreRobot == limit) {
+        nameWinner = "Le robot ";
+        stopFunction();
+      }
     }
 
-    document.querySelector(".scoring").innerHTML=`Joueur : ${scorePlayer} / Robot : ${scoreRobot} `;
+    document.querySelector(".scoring").innerHTML = `Joueur : ${scorePlayer} / Robot : ${scoreRobot} </br>`;
 
     document.querySelector(".result").innerHTML = ` </br> Joueur : ${player} </br> 
                     Robot : ${robot} </br> 
-                    ${resultat} </br>`;
-
+                    ${resultat} </br> `;
   }
+}
+
+////////////////////////////////////////////////////////
+
+// Function to stop the game when the limit defined by the player at the beginning is over 
+
+const buttonStartOver = document.getElementById("startOver");
+
+function stopFunction() {
+
+  buttonStartOver.style.display = "inline";
+  console.log(buttonStartOver.style.display);
+  rock.style.display = "none";
+  paper.style.display = "none";
+  scissors.style.display = "none";
+  document.querySelector(".win").innerHTML = `${nameWinner} a gagné la partie !`;
+
 }
 
 ///////////////////////////////////////////////////////
