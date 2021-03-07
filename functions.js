@@ -33,13 +33,24 @@ const scissors = document.getElementById("scissors");
 buttonStart.addEventListener("click", startGame);
 
 function startGame() {
-  divLapsGame.style.display = "none";
-  rock.style.display = "inline";
-  paper.style.display = "inline";
-  scissors.style.display = "inline";
-  win.style.display = "inline";
-  scoring.style.display = "inline";
-  result.style.display = "inline";
+  if (input.value > 10) {
+    alert("Le nombre maximum de manches est 10");
+    divLapsGame.style.display = "inline-block";
+    rock.style.display = "none";
+    paper.style.display = "none";
+    scissors.style.display = "none";
+    win.style.display = "none";
+    scoring.style.display = "none";
+    result.style.display = "none";
+  } else {
+    divLapsGame.style.display = "none";
+    rock.style.display = "inline";
+    paper.style.display = "inline";
+    scissors.style.display = "inline";
+    win.style.display = "inline";
+    scoring.style.display = "inline";
+    result.style.display = "inline";
+  }
 }
 
 ///////////////////////////////////////////////////////
