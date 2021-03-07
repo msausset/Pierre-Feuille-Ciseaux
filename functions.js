@@ -23,7 +23,7 @@ function updateBtn() {
 
 // Function start the game
 
-let input = document.getElementById("inputNb"); // saisie.value
+let input = document.getElementById("inputNb"); // input.value
 const divLapsGame = document.querySelector(".lapsGame");
 const buttonStart = document.querySelector('.startGame');
 const rock = document.getElementById("rock");
@@ -81,9 +81,9 @@ for (let i = 0; i < buttons.length; i++) {
       }
     }
 
-    document.querySelector(".scoring").innerHTML = `Joueur : ${scorePlayer} / Robot : ${scoreRobot} </br>`;
+    let scoring = document.querySelector(".scoring").innerHTML = `Joueur : ${scorePlayer} / Robot : ${scoreRobot} </br>`;
 
-    document.querySelector(".result").innerHTML = ` </br> Joueur : ${player} </br> 
+    let result = document.querySelector(".result").innerHTML = ` </br> Joueur : ${player} </br> 
                     Robot : ${robot} </br> 
                     ${resultat} </br> `;
   }
@@ -111,11 +111,14 @@ const scoring = document.getElementById("scoring");
 const result = document.getElementById("result");
 
 function startOver() {
+  scorePlayer = 0;
+  scoreRobot = 0;
   buttonStartOver.style.display = "none";
   win.style.display = "none";
   scoring.style.display = "none";
   result.style.display = "none";
-  divLapsGame.style.display = "inline";
-  var divToErase = document.querySelectorAll(".scoring, .result, .win")
-  divToErase = "";
+  divLapsGame.style.display = "inline-block";
+  win.innerHTML = "";
+  scoring.innerHTML = "";
+  result.innerHTML = "";
 }
