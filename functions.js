@@ -92,9 +92,9 @@ for (let i = 0; i < buttons.length; i++) {
       }
     }
 
-    let scoring = document.querySelector(".scoring").innerHTML = `Joueur : ${scorePlayer} / Robot : ${scoreRobot} </br>`;
+    document.querySelector(".scoring").innerHTML = `Joueur : ${scorePlayer} / Robot : ${scoreRobot} </br>`;
 
-    let result = document.querySelector(".result").innerHTML = ` </br> Joueur : ${player} </br> 
+    document.querySelector(".result").innerHTML = ` </br> Joueur : ${player} </br> 
                     Robot : ${robot} </br> 
                     ${resultat} </br> `;
   }
